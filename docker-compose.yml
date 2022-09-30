@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+
+  hbbs:
+    image: rustdesk/rustdesk-server
+    volumes:
+      - ./root:/root
+    command: ["hbbs", "-r", "${HOST}"]
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 21115:21115
+      - 21116:21116
+      - 21116:21116/udp
+      - 21118:21118
+
+  hbbr:
+    image: rustdesk/rustdesk-server
+    volumes:
+      - ./root:/root
+    command: ["hbbr"]
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 21117:21117
+      - 21119:21119
