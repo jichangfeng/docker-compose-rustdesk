@@ -9,7 +9,8 @@ docker-compose runtime environment for [RustDesk self-host server](https://rustd
 
 3. Copy the `.env.example` to `.env`. Update the IP part with your RustDesk server's IP.
 
-4. Run `docker compose up -d` to start the server.
+4. Run `docker-compose up -d` to start the server.
+
 ```
 shell> git clone https://github.com/jichangfeng/docker-compose-rustdesk.git
 shell> cd docker-compose-rustdesk
