@@ -3,7 +3,7 @@ version: '3'
 services:
 
   hbbs:
-    image: rustdesk/rustdesk-server
+    image: jichangfeng/rustdesk-server
     volumes:
       - ./root:/root
     command: ["hbbs", "-r", "${HOST}"]
@@ -22,7 +22,7 @@ services:
       - 21118:21118
 
   hbbr:
-    image: rustdesk/rustdesk-server
+    image: jichangfeng/rustdesk-server
     volumes:
       - ./root:/root
     command: ["hbbr"]
